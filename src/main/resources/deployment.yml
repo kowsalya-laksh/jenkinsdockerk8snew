@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: JenkinsIntegration-k8s
+  labels:
+    app: docker-k8s-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docker-k8s-demo
+  template:
+    metadata:
+      labels:
+        app: docker-k8s-demo
+    spec:
+      containers:
+      - name: JenkinsIntegration-k8s
+        image: JenkinsIntegration
+        imagePullPolicy: Always
+        ports:
+        -containerPort: 8080

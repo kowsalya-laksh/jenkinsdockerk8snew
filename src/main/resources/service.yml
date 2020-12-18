@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: JenkinsIntegration-k8s
+spec:
+  ports:
+    - nodeport: 30163
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: JenkinsIntegration-k8s
+  type: NodePort
