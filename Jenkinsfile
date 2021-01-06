@@ -37,7 +37,7 @@ pipeline {
                         }
                         stage("Linux Build and compile") {
 				when {
-                                branch "master"
+                                branch "or"
                             }
                              steps {
 							    git "https://github.com/kowsalya-laksh/jenkinsdockerk8snew.git"
