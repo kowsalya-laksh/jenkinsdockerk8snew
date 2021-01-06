@@ -36,6 +36,9 @@ pipeline {
                             }
                         }
                         stage("Linux Build and compile") {
+				when {
+                                branch "master"
+                            }
                              steps {
 							    git "https://github.com/kowsalya-laksh/jenkinsdockerk8snew.git"
                                 sh "mvn validate compile -f pom.xml"
